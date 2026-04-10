@@ -1,21 +1,225 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Personal Website</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Full-Stack Developer</title>
     <style>
-      /* Center the header text */
-      h1 {
-        text-align: center;
-      }
+        :root {
+            --bg-color: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 100px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        /* Skills Section */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 60px;
+        }
+
+        .skill-tag {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .project-links a {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--bg-color);
+            background-color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: opacity 0.2s;
+            margin-right: 10px;
+        }
+
+        .project-links a.secondary {
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .project-links a:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            header { padding: 60px 20px; }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+
     <header>
-      <h1>Hello There!</h1>
+        <h1>Your Name</h1>
+        <p class="subtitle">Full-Stack Developer & Web Programming/Design Student at Purdue University</p>
     </header>
-    <main>
-      <p>Welcome to my personal website!</p>
-      <p>Fuck you looking at?</p>
-    </main>
-  </body>
+
+    <div class="container">
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills">
+                <span class="skill-tag">HTML5 & CSS3</span>
+                <span class="skill-tag">JavaScript (ES6+)</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Vite</span>
+                <span class="skill-tag">Next.js</span>
+                <span class="skill-tag">ASP.NET / C#</span>
+                <span class="skill-tag">Figma (UI/UX)</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3 class="project-title">Weather App (Lite Rebuild)</h3>
+                    <span class="project-tech">React • APIs • Front-End</span>
+                    <p class="project-desc">A streamlined, lightweight rebuild inspired by The Weather Channel. Features real-time weather data integration and location search functionality.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/thatguyhanson/weather-app" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Next.js Web Application</h3>
+                    <span class="project-tech">Next.js • Vercel</span>
+                    <p class="project-desc">A scalable, modern web application utilizing Next.js for server-side rendering and optimized performance.</p>
+                    <div class="project-links">
+                        <a href="https://nextjsboilerplate-mauve.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Restaurant POS System</h3>
+                    <span class="project-tech">ASP.NET • C# • State Management</span>
+                    <p class="project-desc">A sophisticated Point of Sale system built for the restaurant industry, featuring complex event handlers and session-based state management.</p>
+                    <div class="project-links">
+                        <a href="#" class="secondary">Code snippet / Repo coming soon</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Izutsumi Discord Bot</h3>
+                    <span class="project-tech">Node.js / API Integration</span>
+                    <p class="project-desc">A custom interactive chatbot integrating roleplay personality prompts and third-party APIs for dynamic server engagement.</p>
+                    <div class="project-links">
+                        <a href="#" class="secondary">Code snippet / Repo coming soon</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Built with clean HTML & CSS. Hosted on GitHub Pages.</p>
+    </footer>
+
+</body>
 </html>
